@@ -1,6 +1,6 @@
 import { Input,Table,Space,Tag } from 'antd';
 import logo from './logo.svg';
-
+import TestButton from './Common/Buttons/index'
 
 function App() {
   const columns = [
@@ -78,7 +78,10 @@ function App() {
 
 
   return (
+    <>
     <Table columns={columns} dataSource={data} />
+      <TestButton name={"asasdasdd"}/>
+    </>
   );
 }
 
