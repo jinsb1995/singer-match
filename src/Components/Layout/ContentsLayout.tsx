@@ -10,15 +10,13 @@ const { Header, Content, Footer, Sider } = Layout;
 const ContentsLayout = ({ contents }: any) => {
     return (
         <>
-            <Layout>
-                <Content style={{ margin: '24px 16px 0', overflowY: 'scroll' }}>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 300, marginBottom: '10px' }}>
+            <Content style={{ margin: '24px 16px 0'}}>
+                <div className="site-layout-background" style={{ padding: 24, minHeight: 300, marginBottom: '10px' }}>
 
-                        {contents}
+                    {contents}
 
-                    </div>
-                </Content>
-            </Layout>
+                </div>
+            </Content>
         </>
     );
 }
