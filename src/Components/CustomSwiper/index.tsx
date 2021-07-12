@@ -10,11 +10,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import './styles.css'
+
+
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
 // 이 스타일은 어떻게 해야할지 논의가 필요함 2021-07-12
-import './styles.css'
 
 
 const { Meta } = Card;
