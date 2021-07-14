@@ -21,6 +21,7 @@ const App = () => {
     return (
         <Layout>
             <Sider
+                style={{backgroundColor:'black'}}
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={(broken) => {
@@ -37,14 +38,13 @@ const App = () => {
                 로그인 정보(css 수정)
                 </div>
 
-                <hr />
 
                 <GlobalMenu />
 
             </Sider>
 
             <Layout style={{backgroundColor:'white'}}>
-                <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
+                <Header className="site-layout-sub-header-background" style={{ padding: 0 , height: 0 }} />
                 <Content style={{ margin: '24px 16px 0', overflowY: 'scroll' }}>
 
                     <Route exact path="/today" component={Today} />

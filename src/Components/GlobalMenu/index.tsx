@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-
+import './style.css';
 
 const GlobalMenu = () => {
     return (
         <>
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-                <Menu.Item key="today" icon={<UserOutlined />}>
+                <Menu.Item key="today" icon={<UserOutlined />} >
                     <Link to="/today">Today</Link>
                 </Menu.Item>
                 <Menu.Item key="best" icon={<VideoCameraOutlined />}>
@@ -18,7 +18,7 @@ const GlobalMenu = () => {
                     <Link to="/match">Match</Link>
                 </Menu.Item>
 
-                <hr />
+                
 
                 <div style={{ marginTop: '50px' }} />
                 
