@@ -27,12 +27,12 @@ const { Meta } = Card;
 // 나중에 모달 컴포넌트가 완성되면, 이것또한 props로 받아서 onclick에 넣어주는 방식으로 진행할 예정
 // (style은 구글검색을 통해 가져옴)
 
-const CustomSwiper = ({ contents }:any) => {
+export const CustomSwiper = ({ contents }:any) => {
 
     return (
         <Swiper
             slidesPerView={3}
-            spaceBetween={30}
+            spaceBetween={20}
             slidesPerGroup={3}
             loop={true}
             loopFillGroupWithBlank={true}
@@ -61,5 +61,36 @@ const CustomSwiper = ({ contents }:any) => {
         </Swiper>
     )
 }
+export const CustomSquareSwiper = ({ contents }:any) => {
 
-export default CustomSwiper;
+    return (
+        <Swiper
+            slidesPerView={4}
+            spaceBetween={50}
+            slidesPerGroup={4}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            pagination={{
+            clickable: true
+            }}
+            navigation={true}
+            className="mySwiper"
+        >
+            
+            {contents.map(({cover, title, description}:any, index:number) => {
+                return (
+                    <SwiperSlide style={{width:'310px' , height:'310px'}}>
+                        <Card
+                            hoverable
+                            style={{ width: '310px' ,height:'310px'}}
+                            cover={<img alt="example" src={cover} style={{width:'310px'}}/>}
+                            onClick={() => alert("모달을 띄울것이다."+index)}
+                        >
+                        </Card>
+                    </SwiperSlide>
+                )
+            })}
+            
+        </Swiper>
+    )
+}
