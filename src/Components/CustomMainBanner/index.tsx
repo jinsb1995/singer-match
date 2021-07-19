@@ -2,7 +2,6 @@ import { Card, Layout, Menu } from 'antd';
 
 const CustomBanner = (props:any) =>{
     const {cover,content} = props
-    console.log(props)
     return(
         <>    
             <Card style={{width:'100%' , height:'250px', backgroundColor:'#f542cb',display:'flex',justifyContent:'center'}}>
