@@ -6,7 +6,7 @@ const Match = () => {
 
 
     return (
-        <ContentsLayout contents={"Match 페이지 입니다."} />
+        <ContentsLayout title={"Match 페이지 입니다."} />
     )
 }
 

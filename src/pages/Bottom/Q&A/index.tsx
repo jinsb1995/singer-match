@@ -6,7 +6,7 @@ const QuestionAnswer = () => {
 
 
     return (
-        <ContentsLayout contents={"Q&A 페이지 입니다."} />
+        <ContentsLayout title={"Q&A 페이지 입니다."} />
     )
 }
 

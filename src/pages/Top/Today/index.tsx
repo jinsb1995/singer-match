@@ -29,7 +29,7 @@ const Today = () => {
             </PageHeader>
             
 
-            <ContentsLayout contents={"Today 페이지 입니다."} > 
+            <ContentsLayout title={"Today 페이지 입니다."} > 
                 {/* 
                     contents는 contents대로 받아주면 되는데 
                     <ContentsLayout>사이에 들어가는 애들은 그쪽으로 넘어가서  children으로 받아주면 

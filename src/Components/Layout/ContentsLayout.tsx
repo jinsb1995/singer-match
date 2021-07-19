@@ -8,7 +8,7 @@ const { Header, Content, Footer, Sider } = Layout;
 // <ContentsLayout contents={"asd"} /> 일단 이렇게 사용중
 
 
-const ContentsLayout = ({ contents, children }: any) => {
+const ContentsLayout = ({ title, children }: any) => {
     
     // props로 받아온 children에 div, span, a 등등 태그들이 들어와도 밑에 뿌려주면 그려준다. 신기하군
 
@@ -18,7 +18,7 @@ const ContentsLayout = ({ contents, children }: any) => {
             <Content style={{ margin: '24px 16px 0'}}>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 300, marginBottom: '10px' }}>
                     
-                    {contents}
+                    {title}
 
                     {children}
 

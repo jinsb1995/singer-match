@@ -6,7 +6,7 @@ const Review = () => {
 
 
     return (
-        <ContentsLayout contents={"Review 페이지 입니다."} />
+        <ContentsLayout title={"Review 페이지 입니다."} />
     )
 }
 
