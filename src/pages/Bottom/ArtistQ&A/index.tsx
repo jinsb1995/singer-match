@@ -6,7 +6,7 @@ const Artist = () => {
 
 
     return (
-        <ContentsLayout contents={"Artist 페이지 입니다."} />
+        <ContentsLayout title={"Artist 페이지 입니다."} />
     )
 }
 
