@@ -4,14 +4,14 @@ const CustomBanner = (props:any) =>{
     const {cover,content} = props
     return(
         <>    
-            <Card style={{width:'100%' , height:'250px', backgroundColor:'#f542cb',display:'flex',justifyContent:'center'}}>
-                    <Card style={{ width:'400px' ,height:'200px',flex:'1',display:'inline-block'}}></Card>
-                    <Card style={{ width:'400px' ,height:'200px',flex:'1',display:'inline-block'}}></Card>
-            </Card>
+            <div style={{backgroundColor:'black' , width:'98%',height:'300px' ,display:'flex',justifyContent:'space-around'}}>
+                <div style={{width:'200px' ,backgroundColor:'white',height:'300px'}}>
+                </div>
+                <div style={{width:'200px' ,backgroundColor:'white',height:'300px'}}>
+                </div>
+            </div>
         </>
     )
-
-
 
 }
 
