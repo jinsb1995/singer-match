@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentsLayout from '../../../Components/Layout/ContentsLayout';
+import ContentsLayout from 'Components/Layout/ContentsLayout';
 
 
 const Match = () => {

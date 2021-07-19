@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ContentsLayout from '../../../Components/Layout/ContentsLayout'
+import ContentsLayout from 'Components/Layout/ContentsLayout'
 import { Card, Layout, Menu } from 'antd';
-import CustomBanner from '../../../Components/CustomMainBanner'
-import {CustomSwiper , CustomSquareSwiper} from '../../../Components/CustomSwiper/index'
+import CustomBanner from 'Components/CustomMainBanner'
+import {CustomSwiper , CustomSquareSwiper} from 'Components/CustomSwiper/index'
 const { Meta } = Card;
 
 
