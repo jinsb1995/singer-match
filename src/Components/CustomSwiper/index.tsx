@@ -75,6 +75,7 @@ export const CustomSquareSwiper = ({ contents }:any) => {
             }}
             navigation={true}
             className="mySwiper"
+            key={`cusotmSquerSwiperTae`}
         >
             
             {contents.map(({cover, title, description}:any, index:number) => {
@@ -85,6 +86,7 @@ export const CustomSquareSwiper = ({ contents }:any) => {
                             style={{ width: '310px' ,height:'310px'}}
                             cover={<img alt="example" src={cover} style={{width:'310px'}}/>}
                             onClick={() => alert("모달을 띄울것이다."+index)}
+                            key={`slider${index}`}
                         >
                         </Card>
                     </SwiperSlide>

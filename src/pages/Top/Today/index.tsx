@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ContentsLayout from 'Components/Layout/ContentsLayout'
-import { Card, Layout, Menu } from 'antd';
+import { Card, Layout, Menu ,PageHeader } from 'antd';
 import CustomBanner from 'Components/CustomMainBanner'
 import {CustomSwiper , CustomSquareSwiper} from 'Components/CustomSwiper/index'
 const { Meta } = Card;
@@ -24,8 +24,10 @@ const Today = () => {
 
     return (
         <>
-
-            <CustomBanner cover = "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" content ='Hello Singer!'/>
+            <PageHeader>
+                <CustomBanner cover = "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" content ='Hello Singer!'/>
+            </PageHeader>
+            
 
             <ContentsLayout title={"Today 페이지 입니다."} > 
                 {/* 
@@ -33,6 +35,9 @@ const Today = () => {
                     <ContentsLayout>사이에 들어가는 애들은 그쪽으로 넘어가서  children으로 받아주면 
                     ex) <div><span><a>등 태그들도 고대로 같이 받아주기 때문에 그냥 넣으면 된다.
                 */}
+                <CustomSquareSwiper contents={tmpContent} />
+                <CustomSquareSwiper contents={tmpContent} />
+                <CustomSquareSwiper contents={tmpContent} />
                 <CustomSquareSwiper contents={tmpContent} />
             </ContentsLayout>
         </>
