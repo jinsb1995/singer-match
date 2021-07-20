@@ -1,0 +1,7 @@
+.ant-menu-dark {background-color: black !important; }
+.ant-menu > li { background-color: black;}
+.ant-menu-item-selected {background-color: black !important;}
+.ant-menu-item-active{color: #ffccf2 !important;}
+.ant-menu-item-active a{color: #ffccf2 !important; }
+
+

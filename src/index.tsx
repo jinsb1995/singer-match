@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Root from './Components/Root';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'
+
+// App이 Root에서 BrowserRouter로 감싸져있으니까 
+// Root를 불러와서 그려준다.
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Root />,
   document.getElementById('root')
 );
 

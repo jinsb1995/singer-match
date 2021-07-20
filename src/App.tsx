@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from 'antd';
+import 'antd/dist/antd.css';
+import './index.css';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import Today from './pages/Top/Today';
+import GlobalMenu from './Components/GlobalMenu';
+import Best from './pages/Top/Best';
+import Match from './pages/Top/Match';
+import Review from './pages/Bottom/Review';
+import QuestionAnswer from './pages/Bottom/Q&A';
+import Artist from './pages/Bottom/ArtistQ&A';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { Header, Content, Footer, Sider } = Layout;
+
+// 메뉴와 컨텐츠를 라우터로 이용한다.
+
+
+const App = () => {
+
+    return (
+        <Layout>
+            <Sider
+                style={{backgroundColor:'black'}}
+                breakpoint="lg"
+                collapsedWidth="0"
+                onBreakpoint={(broken) => {
+                    console.log(broken);
+                }}
+                onCollapse={(collapsed, type) => {
+                    console.log(collapsed, type);
+                }}
+            >
+                <div className="logo"> 
+                로고
+                </div>
+                <div style={{ backgroundColor: 'white', width: '70%', margin: '30px auto' }}> 
+                로그인 정보(css 수정)
+                </div>
+
+
+                <GlobalMenu />
+
+            </Sider>
+
+            <Layout style={{backgroundColor:'#f2f2f2'}}>
+                <Header className="site-layout-sub-header-background" style={{ padding: 0 , height: 0 }} />
+                <Content style={{ margin: '20px 100px 0'}}>
+
+                    <Route exact path="/today" component={Today} />
+                    <Route exact path="/best" component={Best} />
+                    <Route exact path="/match" component={Match} />
+
+                    <Route exact path="/review" component={Review} />
+                    <Route exact path="/artistqnd" component={Artist} />
+                    <Route exact path="/qna" component={QuestionAnswer} />
+
+                </Content>
+                <Footer style={{ textAlign: 'center' }}></Footer>
+            </Layout>
+        </Layout>
+    );
 }
 
 export default App;
