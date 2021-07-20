@@ -76,19 +76,14 @@ export const CustomSquareSwiper = ({ contents }:any) => {
             navigation={true}
             className="mySwiper"
             key={`cusotmSquerSwiperTae`}
+            style={{height:'320px', width:'90%'}}
+
         >
             
             {contents.map(({cover, title, description}:any, index:number) => {
                 return (
                     <SwiperSlide style={{width:'310px' , height:'310px'}}>
-                        <Card
-                            hoverable
-                            style={{ width: '310px' ,height:'310px'}}
-                            cover={<img alt="example" src={cover} style={{width:'310px'}}/>}
-                            onClick={() => alert("모달을 띄울것이다."+index)}
-                            key={`slider${index}`}
-                        >
-                        </Card>
+                        <img alt="example" src={cover} style={{width:'310px'}}/>
                     </SwiperSlide>
                 )
             })}
