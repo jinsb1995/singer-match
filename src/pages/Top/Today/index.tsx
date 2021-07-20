@@ -36,6 +36,9 @@ const Today = () => {
                     ex) <div><span><a>등 태그들도 고대로 같이 받아주기 때문에 그냥 넣으면 된다.
                 */}
                 <CustomSquareSwiper contents={tmpContent} />
+                <CustomSquareSwiper contents={tmpContent} />
+                <CustomSquareSwiper contents={tmpContent} />
+                <CustomSquareSwiper contents={tmpContent} />
             </ContentsLayout>
         </>
     );

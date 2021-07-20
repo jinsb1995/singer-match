@@ -43,9 +43,9 @@ const App = () => {
 
             </Sider>
 
-            <Layout style={{backgroundColor:'white'}}>
+            <Layout style={{backgroundColor:'#f2f2f2'}}>
                 <Header className="site-layout-sub-header-background" style={{ padding: 0 , height: 0 }} />
-                <Content style={{ margin: '24px 16px 0', overflowY: 'scroll' }}>
+                <Content style={{ margin: '20px 100px 0'}}>
 
                     <Route exact path="/today" component={Today} />
                     <Route exact path="/best" component={Best} />
