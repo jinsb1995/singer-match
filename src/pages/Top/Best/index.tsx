@@ -8,11 +8,11 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import BestCardModal from './BestCardModal';
 import Modal from 'antd/lib/modal/Modal';
+import { CustomModalConnector } from 'Components/CustomModalConnector';
 
 
 const Best = () => {
-    const [modalVisible, setModalVisible] = useState<any>(false);
-
+    
     const [tmpContent, setContents] = useState<any>([
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title1', description: 'description1' },
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title2', description: 'description2' },
@@ -25,8 +25,7 @@ const Best = () => {
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title9', description: 'description9' },
     ]);
 
-    const modalClose = () => setModalVisible(false);
-
+    
     return (
         <>
             
@@ -58,7 +57,8 @@ const Best = () => {
                                     hoverable
                                     style={{ width: '310px' ,height:'310px'}}
                                     cover={<img alt="example" src={cover} style={{width:'310px'}}/>}
-                                    onClick={() => setModalVisible(!modalVisible)}
+                                    // onClick={() => setModalVisible(!modalVisible)}
+                                    onClick={() => CustomModalConnector( { modalComponent: BestCardModal, refData: tmpContent } )}
                                 >
 
                                 </Card>
@@ -72,7 +72,7 @@ const Best = () => {
             
 
 
-            <BestCardModal modalVisible={modalVisible} modalClose={modalClose} />
+            
             
 
             {/* <ContentsLayout contents={'slide 1'}>
