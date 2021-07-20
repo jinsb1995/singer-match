@@ -15,7 +15,7 @@ const ContentsLayout = ({ title, children }: any) => {
 
     return (
         <>
-            <Content style={{ margin: '24px 16px 0'}}>
+            <Content style={{ margin: '24px 16px 0' }}>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 300, marginBottom: '10px' }}>
                     
                     {title}
