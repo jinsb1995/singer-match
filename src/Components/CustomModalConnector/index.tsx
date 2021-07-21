@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
+import { render } from 'react-dom';
 
 
 
 // interface CustomModal {
-//     modalComponent : Function
+//     modalComponent : Component
 // }
 
 
 // export const CustomModalConnector:React.FC<CustomModal> = ({ modalComponent }) => {
-export const CustomModalConnector = ({ modalComponent, refData }:any) => {
+const CustomModalConnector = ({ modalComponent, refData }:any) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
 
     const modalClose = () => setModalVisible(false);
@@ -21,7 +22,10 @@ export const CustomModalConnector = ({ modalComponent, refData }:any) => {
 
     return (
         <>
-            
+
         </>
     )
 }
+
+
+export default CustomModalConnector;
