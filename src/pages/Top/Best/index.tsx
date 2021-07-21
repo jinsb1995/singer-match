@@ -8,10 +8,13 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import BestCardModal from './BestCardModal';
 import Modal from 'antd/lib/modal/Modal';
-import { CustomModalConnector } from 'Components/CustomModalConnector';
+import CustomModalConnector from 'Components/CustomModalConnector';
+import { render } from 'react-dom';
 
 
 const Best = () => {
+    const [modalVisible, setModalVisible] = useState<boolean>(false);
+    const [sendModalId, setSendModalId] = useState<any>('');
     
     const [tmpContent, setContents] = useState<any>([
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title1', description: 'description1' },
@@ -24,7 +27,13 @@ const Best = () => {
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title8', description: 'description8' },
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title9', description: 'description9' },
     ]);
+    
+    const openPopup = (asd:any) => {
+        setModalVisible(!modalVisible)
+        setSendModalId(asd)
+    }
 
+    const modalClose = () => setModalVisible(false);
     
     return (
         <>
@@ -50,21 +59,22 @@ const Best = () => {
                     className="mySwiper"
                 >
                     
-                    {tmpContent.map(({cover, title, description}:any, index:number) => {
+                    {tmpContent.map(({ cover, title, description }:any) => {
                         return (
                             <SwiperSlide style={{width:'310px' , height:'310px'}}>
                                 <Card
                                     hoverable
                                     style={{ width: '310px' ,height:'310px'}}
                                     cover={<img alt="example" src={cover} style={{width:'310px'}}/>}
-                                    // onClick={() => setModalVisible(!modalVisible)}
-                                    onClick={() => CustomModalConnector( { modalComponent: BestCardModal, refData: tmpContent } )}
+                                    onClick={() => openPopup(title) }
                                 >
 
                                 </Card>
                             </SwiperSlide>
                         )
                     })}
+
+                    {modalVisible && <BestCardModal modalVisible={modalVisible} modalClose={modalClose} id={sendModalId} />}
                     
                 </Swiper>
                 
