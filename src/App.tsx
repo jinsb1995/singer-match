@@ -43,7 +43,7 @@ const App = () => {
 
             </Sider>
 
-            <Layout style={{backgroundColor:'#f2f2f2'}}>
+            <Layout style={{backgroundColor:'white' ,overflow:'auto'}}>
                 <Header className="site-layout-sub-header-background" style={{ padding: 0 , height: 0 }} />
                 <Content style={{ margin: '20px 100px 0'}}>
 
@@ -56,8 +56,8 @@ const App = () => {
                     <Route exact path="/qna" component={QuestionAnswer} />
 
                 </Content>
-                <Footer style={{ textAlign: 'center' }}></Footer>
             </Layout>
+
         </Layout>
     );
 }

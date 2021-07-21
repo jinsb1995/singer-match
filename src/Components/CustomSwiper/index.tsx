@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Layout, Menu } from 'antd';
+import { Card, Layout, Menu,PageHeader } from 'antd';
 
 // Import Swiper styles
 import "swiper/swiper.min.css";
@@ -76,18 +76,63 @@ export const CustomSquareSwiper = ({ contents }:any) => {
             navigation={true}
             className="mySwiper"
             key={`cusotmSquerSwiperTae`}
-            style={{height:'320px', width:'90%'}}
+            style={{height:'420px', width:'90%' , marginTop:'50px'}}
 
         >
-            
             {contents.map(({cover, title, description}:any, index:number) => {
                 return (
-                    <SwiperSlide style={{width:'310px' , height:'310px'}}>
-                        <img alt="example" src={cover} style={{width:'310px'}}/>
+                    <SwiperSlide style={{width:'310px' , height:'420px',overflow:'hidden'}}>
+                        <Card
+                            hoverable
+                            style={{ width: 'inherit',height: 'inherit' }}
+                            cover={<img alt="example" src={cover} style={{width:'310px',height:'310px'}}/>}
+                        >
+                            <Meta title={title} description={description}  style={{width: 'inherit' , height:'30px'}}/>
+                        </Card>
+                        
                     </SwiperSlide>
                 )
             })}
-            
         </Swiper>
+        
+    )
+}
+export const CustomArtistInfoSwiper = ( {contents,marginBottomSize}:any) => {
+    
+    return (
+        <PageHeader>
+            <h3>Artist ..??</h3>
+            <Swiper
+                slidesPerView={3}
+                spaceBetween={50}
+                slidesPerGroup={3}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                clickable: true
+                }}
+                navigation={true}
+                className="mySwiper"
+                key={`cusotmSquerSwiperTae`}
+                style={{height:'600px', width:'90%' , marginTop:'50px' }}
+
+            >
+                {contents.map(({cover, title, description}:any, index:number) => {
+                    return (
+                        <SwiperSlide style={{width:'400px' , height:'600px',overflow:'hidden'}}>
+                            <Card
+                                hoverable
+                                style={{ width: 'inherit',height: 'inherit' }}
+                                cover={<img alt="example" src={cover} style={{width:'100%',height:'100%'}}/>}
+                            >
+                                <Meta title="Europe Street beat" description="www.instagram.com"  style={{width: 'inherit' , height:'30px'}}/>
+                            </Card>
+                            
+                        </SwiperSlide>
+                    )
+                })}
+            </Swiper>
+        </PageHeader>
+        
     )
 }
