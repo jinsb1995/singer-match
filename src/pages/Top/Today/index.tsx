@@ -28,9 +28,10 @@ const Today = () => {
             <PageHeader>
                 <CustomBanner cover = "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" content ='Hello Singer!'/>
             </PageHeader>
-            <CustomSquareSwiper contents={tmpContent} />
-            <CustomSquareSwiper contents={tmpContent} />
-            <CustomArtistInfoSwiper contents={tmpContent} marginBottomSize='100px' />
+            
+            <CustomSquareSwiper contents={tmpContent} title='오늘의 Hit!' />
+            <CustomSquareSwiper contents={tmpContent} title='새로나왔어요' />
+            <CustomArtistInfoSwiper contents={tmpContent} marginBottomSize='100px' title='오직 여기에서만!'/>
             <Footer style={{backgroundColor:'white'}}> </Footer>
         </>
     );
