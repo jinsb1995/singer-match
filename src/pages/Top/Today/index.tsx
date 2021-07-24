@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import ContentsLayout from 'Components/Layout/ContentsLayout'
 import { Card, Layout, Menu ,PageHeader } from 'antd';
 import CustomBanner from 'Components/CustomMainBanner'
-import {CustomSwiper , CustomSquareSwiper} from 'Components/CustomSwiper/index'
+import {CustomSwiper , CustomSquareSwiper ,CustomArtistInfoSwiper} from 'Components/CustomSwiper/index'
+import { Footer } from 'antd/lib/layout/layout';
 const { Meta } = Card;
 
 
@@ -27,9 +28,10 @@ const Today = () => {
             <PageHeader>
                 <CustomBanner cover = "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" content ='Hello Singer!'/>
             </PageHeader>
-            
-
             <CustomSquareSwiper contents={tmpContent} />
+            <CustomSquareSwiper contents={tmpContent} />
+            <CustomArtistInfoSwiper contents={tmpContent} marginBottomSize='100px' />
+            <Footer style={{backgroundColor:'white'}}> </Footer>
         </>
     );
 };
