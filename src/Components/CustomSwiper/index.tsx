@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Layout, Menu,PageHeader } from 'antd';
-
+import { Card, Layout, Menu,PageHeader,Space,Typography } from 'antd';
+import {RightOutlined} from '@ant-design/icons'
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
@@ -20,7 +20,7 @@ SwiperCore.use([Navigation]);
 
 
 const { Meta } = Card;
-
+const {Title} = Typography;
 // 필요한것: card에 들어갈 이미지, 타이틀, 설명 -> 이걸 우리에게 필요한 값으로 바꿔줘야함
 
 // 여기서 props로 이미지(card)에 들어갈 내용들을 받아서 card에 넣어주고
@@ -61,47 +61,53 @@ export const CustomSwiper = ({ contents }:any) => {
         </Swiper>
     )
 }
-export const CustomSquareSwiper = ({ contents }:any) => {
+export const CustomSquareSwiper = ({ contents,title }:any) => {
 
     return (
-        <Swiper
-            slidesPerView={4}
-            spaceBetween={50}
-            slidesPerGroup={4}
-            loop={true}
-            loopFillGroupWithBlank={true}
-            pagination={{
-            clickable: true
-            }}
-            navigation={true}
-            className="mySwiper"
-            key={`cusotmSquerSwiperTae`}
-            style={{height:'420px', width:'90%' , marginTop:'50px'}}
-
-        >
-            {contents.map(({cover, title, description}:any, index:number) => {
-                return (
-                    <SwiperSlide style={{width:'310px' , height:'420px',overflow:'hidden'}}>
-                        <Card
-                            hoverable
-                            style={{ width: 'inherit',height: 'inherit' }}
-                            cover={<img alt="example" src={cover} style={{width:'310px',height:'310px'}}/>}
-                        >
-                            <Meta title={title} description={description}  style={{width: 'inherit' , height:'30px'}}/>
-                        </Card>
-                        
-                    </SwiperSlide>
-                )
-            })}
-        </Swiper>
+        <PageHeader>
+            <Space align="center" >
+                <Title level={5} >{title} <RightOutlined style={{color:'#999999'}}/></Title>
+            </Space>
+            <Swiper
+                slidesPerView={4}
+                spaceBetween={50}
+                slidesPerGroup={4}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                clickable: true
+                }}
+                navigation={true}
+                className="mySwiper"
+                key={`cusotmSquerSwiperTae`}
+                style={{height:'420px', width:'100%'}}
+            >
+                {contents.map(({cover, title, description}:any, index:number) => {
+                    return (
+                        <SwiperSlide style={{width:'310px' , height:'420px',overflow:'hidden'}}>
+                            <Card
+                                hoverable
+                                style={{ width: 'inherit',height: 'inherit' }}
+                                cover={<img alt="example" src={cover} style={{width:'100%',height:'310px'}}/>}
+                            >
+                                <Meta title={title} description={description}  style={{width: 'inherit' , height:'30px'}}/>
+                            </Card>
+                            
+                        </SwiperSlide>
+                    )
+                })}
+            </Swiper>
+        </PageHeader>
         
     )
 }
-export const CustomArtistInfoSwiper = ( {contents,marginBottomSize}:any) => {
+export const CustomArtistInfoSwiper = ( {contents,marginBottomSize,title}:any) => {
     
     return (
         <PageHeader>
-            <h3>Artist ..??</h3>
+            <Space align="center" >
+                <Title level={5} >{title} <RightOutlined style={{color:'#999999'}}/></Title>
+            </Space>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={50}
@@ -114,7 +120,7 @@ export const CustomArtistInfoSwiper = ( {contents,marginBottomSize}:any) => {
                 navigation={true}
                 className="mySwiper"
                 key={`cusotmSquerSwiperTae`}
-                style={{height:'600px', width:'90%' , marginTop:'50px' }}
+                style={{height:'600px', width:'100%'}}
 
             >
                 {contents.map(({cover, title, description}:any, index:number) => {
