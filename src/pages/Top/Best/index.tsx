@@ -28,9 +28,9 @@ const Best = () => {
         { cover: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png', title: 'title9', description: 'description9' },
     ]);
     
-    const openPopup = (asd:any) => {
+    const openPopup = (id:any) => {
         setModalVisible(!modalVisible)
-        setSendModalId(asd)
+        setSendModalId(id)
     }
 
     const modalClose = () => setModalVisible(false);
@@ -49,7 +49,7 @@ const Best = () => {
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={50}
-                    slidesPerGroup={4}
+                    // slidesPerGroup={4}
                     loop={true}
                     loopFillGroupWithBlank={true}
                     pagination={{

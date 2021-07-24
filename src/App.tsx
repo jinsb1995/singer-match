@@ -32,10 +32,10 @@ const App = () => {
                 }}
             >
                 <div className="logo"> 
-                로고
+                    로고
                 </div>
                 <div style={{ backgroundColor: 'white', width: '70%', margin: '30px auto' }}> 
-                로그인 정보(css 수정)
+                    로그인 정보(css 수정)
                 </div>
 
 
